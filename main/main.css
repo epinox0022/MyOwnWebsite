@@ -1,0 +1,284 @@
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.u-center-area {
+  display: flex;
+  justify-content: center;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #04000d;
+  margin: rem;
+}
+
+header {
+  min-height: 70vh;
+  padding: 2rem 5rem 0 5rem;
+  background-image: linear-gradient(to right bottom, rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.7)), url(/img/bg.jpg.jpg);
+  background-size: cover;
+  background-blend-mode: darken;
+  margin-bottom: 5rem;
+}
+
+main {
+  min-height: 110vh;
+  padding: 2rem 5rem 0 5rem;
+  background-image: linear-gradient(to right bottom, rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.7)), url(/img/PokemonBG.jpg);
+  background-size: cover;
+  background-blend-mode: darken;
+  display: block;
+}
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+.row:not(:last-child) {
+  margin-bottom: 6rem;
+}
+.row [class^=col-] {
+  float: left;
+  margin-bottom: 6rem;
+}
+.row [class^=col-]:not(:last-child) {
+  margin-right: 6rem;
+}
+.row .col-1-2 {
+  width: calc((100% - 6rem) / 2);
+}
+.row .col-1-3 {
+  width: calc((100% - 2 * 6rem) / 3);
+}
+.row .col-1-4 {
+  width: calc((100% - 3 * 6rem) / 4);
+}
+.row .col-2-4 {
+  width: calc(2 * (100% - 3 * 6rem) / 4 + 6rem);
+}
+
+.head {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 1rem;
+  display: block;
+}
+.head__h {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  margin-left: 20rem;
+  color: #d2ece0;
+  text-transform: uppercase;
+  letter-spacing: 0.8rem;
+  animation: zoomIn 1s ease-in;
+}
+.head__p {
+  font-size: 1.8rem;
+  font-weight: 600;
+  line-height: 2;
+  letter-spacing: 0.3rem;
+  color: #d2ece0;
+  margin-left: 20rem;
+  animation: zoomIn 1s ease-in;
+}
+
+.grid2 {
+  display: inline-block;
+  text-align: center;
+}
+.grid2__head {
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-weight: 500;
+  font-size: 5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 2fr);
+  grid-gap: 5rem;
+  grid-template-rows: repeat(3, 1fr);
+  height: 75vh;
+  z-index: 2;
+  position: relative;
+}
+.grid__section1 {
+  background-blend-mode: screen;
+  grid-column: 1/3;
+  grid-row: 1/4;
+  padding: 5rem;
+}
+.grid__section1--pokemon1 {
+  background-image: url(/img/pngwing2.png);
+  background-size: cover;
+  background-blend-mode: darken;
+  border-bottom-right-radius: 1rem;
+  border-right: 1px solid rgba(18, 7, 43, 0.7);
+  border-bottom: 4px solid rgba(18, 7, 43, 0.7);
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+  margin-bottom: 4rem;
+}
+.grid__section1--pokemon1:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+  box-shadow: 0 0 3rem black;
+  border: none;
+}
+.grid__section2 {
+  background-blend-mode: screen;
+  grid-column: 3/5;
+  grid-row: 1/4;
+  padding: 5rem;
+}
+.grid__section2--pokemon2 {
+  background-image: url(/img/pngwing7.png);
+  background-size: cover;
+  background-blend-mode: darken;
+  background-position: center;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-left: 1px solid black;
+  border-bottom: 4px solid black;
+  border-right: 1px solid black;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+  margin-bottom: 4rem;
+}
+.grid__section2--pokemon2:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+  box-shadow: 0 0 3rem black;
+  border: none;
+}
+.grid__section3 {
+  background-blend-mode: screen;
+  grid-column: 5/7;
+  grid-row: 1/4;
+  padding: 5rem;
+}
+.grid__section3--pokemon3 {
+  background-image: url(/img/pngwing3.png);
+  background-size: cover;
+  background-blend-mode: darken;
+  background-position: center;
+  border-bottom-left-radius: 1rem;
+  border-left: 1px solid black;
+  border-bottom: 4px solid black;
+  width: 100%;
+  height: 100%;
+  transition: all 0.2s ease-in;
+  margin-bottom: 4rem;
+}
+.grid__section3--pokemon3:hover {
+  transform: scale(1.1);
+  border-radius: 5px;
+  box-shadow: 0 0 3rem black;
+  border: none;
+}
+.grid__box1 {
+  border-radius: 1rem;
+  padding: 2rem;
+  background-image: linear-gradient(to top left, rgba(71, 5, 227, 0.6), rgba(132, 79, 255, 0.7));
+  width: auto;
+  height: auto;
+}
+.grid__box1--max1 {
+  display: inline-block;
+}
+.grid__box1--max1-h1 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(46, 12, 53);
+}
+.grid__box1--max1-p1 {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(46, 12, 53);
+}
+.grid__box2 {
+  border-radius: 1rem;
+  padding: 2rem;
+  background-image: linear-gradient(to top left, rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.3), rgba(132, 79, 255, 0.7));
+  width: auto;
+  height: auto;
+}
+.grid__box2--max2 {
+  display: inline-block;
+}
+.grid__box2--max2-h2 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(46, 12, 53);
+}
+.grid__box2--max2-p2 {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(46, 12, 53);
+}
+.grid__box3 {
+  border-radius: 1rem;
+  padding: 2rem;
+  background-image: linear-gradient(to bottom right, rgba(132, 79, 255, 0.3), rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.5));
+  width: auto;
+  height: auto;
+}
+.grid__box3--max3 {
+  display: inline-block;
+}
+.grid__box3--max3-h3 {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(46, 12, 53);
+}
+.grid__box3--max3-p3 {
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgb(46, 12, 53);
+}/*# sourceMappingURL=main.css.map */

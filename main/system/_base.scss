@@ -1,0 +1,50 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: $N-color-2;
+  margin: rem;
+}
+
+header {
+  min-height: 70vh;
+  padding: 2rem 5rem 0 5rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-3, 0.7),
+      rgba($color-4, 0.7)
+    ),
+    url(/img/bg.jpg.jpg);
+  background-size: cover;
+
+  background-blend-mode: darken;
+  margin-bottom: 5rem;
+}
+
+main {
+  min-height: 110vh;
+  padding: 2rem 5rem 0 5rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-3, 0.7),
+      rgba($color-4, 0.7)
+    ),
+    url(/img/PokemonBG.jpg);
+  background-size: cover;
+  //   width: 95%;
+  background-blend-mode: darken;
+  display: block;
+}

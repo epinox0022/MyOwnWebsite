@@ -1,0 +1,31 @@
+.head {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  border-bottom: 2px solid rgba(#fff, 0.5);
+  padding-bottom: 1rem;
+
+  display: block;
+
+  &__h {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    margin-left: 20rem;
+    color: rgba($N-color-1, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    animation: zoomIn 1s ease-in;
+  }
+
+  &__p {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0.3rem;
+    color: rgba($N-color-1, 1);
+    margin-left: 20rem;
+
+    animation: zoomIn 1s ease-in;
+  }
+}
