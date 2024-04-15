@@ -29,13 +29,12 @@ header {
     ),
     url(/img/bg.jpg.jpg);
   background-size: cover;
-
   background-blend-mode: darken;
   margin-bottom: 5rem;
 }
 
 main {
-  min-height: 110vh;
+  min-height: 120vh;
   padding: 2rem 5rem 0 5rem;
   background-image: linear-gradient(
       to right bottom,
@@ -46,5 +45,29 @@ main {
   background-size: cover;
   //   width: 95%;
   background-blend-mode: darken;
+  margin-bottom: 5rem;
   display: block;
 }
+
+.grids {
+  min-height: 80vh;
+  padding: 2rem 10rem 0 5rem;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-3, 0.7),
+      rgba($color-4, 0.7)
+    ),
+    url(/img/pngwing6.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+footer {
+  min-height: 50vh;
+}
+
+// Extra design

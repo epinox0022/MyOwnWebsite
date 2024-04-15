@@ -1,0 +1,21 @@
+.grids__flaces {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: pointer;
+
+  transform: translate(25%, -50%);
+
+  &--grimer {
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 1.4rem;
+  }
+
+  &--grimparag {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+}

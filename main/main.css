@@ -23,6 +23,11 @@
   justify-content: center;
 }
 
+.u-center-areas {
+  text-align: center;
+  border-bottom: 2px solid black;
+}
+
 *,
 *::after,
 *::before {
@@ -54,12 +59,29 @@ header {
 }
 
 main {
-  min-height: 110vh;
+  min-height: 120vh;
   padding: 2rem 5rem 0 5rem;
   background-image: linear-gradient(to right bottom, rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.7)), url(/img/PokemonBG.jpg);
   background-size: cover;
   background-blend-mode: darken;
+  margin-bottom: 5rem;
   display: block;
+}
+
+.grids {
+  min-height: 80vh;
+  padding: 2rem 10rem 0 5rem;
+  background-image: linear-gradient(to right bottom, rgba(132, 79, 255, 0.7), rgba(71, 5, 227, 0.7)), url(/img/pngwing6.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-blend-mode: darken;
+  position: relative;
+  margin-bottom: 5rem;
+}
+
+footer {
+  min-height: 50vh;
 }
 
 .row {
@@ -89,6 +111,38 @@ main {
   width: calc(2 * (100% - 3 * 6rem) / 4 + 6rem);
 }
 
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14%;
+  height: 100%;
+  background-image: linear-gradient(to bottom right, rgba(33, 12, 82, 0.5), rgba(71, 5, 227, 0.4));
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.kings {
+  position: relative;
+}
+
+.a__button {
+  margin-top: 5rem;
+}
+.a__button--main {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.7rem;
+  color: rgb(188, 174, 199);
+  padding: 0.5rem;
+  border-bottom-right-radius: 0.3rem;
+  transition: all 0.4s ease-out;
+}
+.a__button--main:hover {
+  border: none;
+  box-shadow: 0.3rem 0.4rem 0.5rem black;
+}
+
 .head {
   position: absolute;
   top: 50%;
@@ -96,7 +150,7 @@ main {
   transform: translate(-50%, -50%);
   border-bottom: 2px solid rgba(255, 255, 255, 0.5);
   padding-bottom: 1rem;
-  display: block;
+  display: inline-block;
 }
 .head__h {
   font-size: 4rem;
@@ -115,6 +169,175 @@ main {
   color: #d2ece0;
   margin-left: 20rem;
   animation: zoomIn 1s ease-in;
+}
+
+.navigation__checkbox {
+  display: none;
+}
+.navigation__button {
+  background-color: #4705e3;
+  height: 7rem;
+  width: 7rem;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem rgba(132, 79, 255, 0.1);
+  text-align: center;
+  cursor: pointer;
+}
+.navigation__background {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 6.5rem;
+  right: 6.5rem;
+  background-image: radial-gradient(#844fff, #4705e3);
+  z-index: 1000;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.navigation__nav {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.navigation__list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+.navigation__item {
+  margin: 1rem;
+}
+.navigation__link:link, .navigation__link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(120deg, transparent 0%, transparent 50%, #fff 50%);
+  background-size: 220%;
+  transition: all 0.4s;
+}
+.navigation__link:link span, .navigation__link:visited span {
+  margin-right: 1.5rem;
+  display: inline-block;
+}
+.navigation__link:hover, .navigation__link:active {
+  background-position: 100%;
+  color: #4705e3;
+  transform: translateX(1rem);
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  transform: scale(80);
+}
+.navigation__checkbox:checked ~ .navigation__nav {
+  opacity: 1;
+  width: 100%;
+}
+.navigation__icon {
+  position: relative;
+  margin-top: 3.5rem;
+}
+.navigation__icon, .navigation__icon::before, .navigation__icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #844fff;
+  display: inline-block;
+}
+.navigation__icon::before, .navigation__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation__icon::before {
+  top: -0.8rem;
+}
+.navigation__icon::after {
+  top: 0.8rem;
+}
+.navigation__button:hover .navigation__icon::before {
+  top: -1rem;
+}
+.navigation__button:hover .navigation__icon::after {
+  top: 1rem;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon {
+  background-color: transparent;
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.navigation__checkbox:checked + .navigation__button .navigation__icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+.footer {
+  min-height: 20vh;
+  background-image: linear-gradient(to right bottom, #844fff, #4705e3);
+  padding: 2rem 5rem 0 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer--h1 {
+  color: rgb(250, 199, 255);
+  text-transform: uppercase;
+  letter-spacing: 1rem;
+}
+
+.footer__second {
+  min-height: 30vh;
+  padding: 2rem 5rem 0 5rem;
+  background-color: rgba(71, 5, 227, 0.9);
+  border-top: 1px solid #4d0457;
+}
+
+.this-area {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+}
+.this-area__ul {
+  display: flex;
+  justify-content: end;
+  gap: 2rem;
+}
+.this-area__ul li {
+  list-style: none;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease-in;
+}
+.this-area__ul li:hover {
+  transform: rotate(2deg) scale(1.3);
+  box-shadow: 0.3rem 0.2rem 0.4rem rgb(20, 20, 20);
+}
+.this-area__ul a {
+  text-decoration: none;
+  color: rgb(185, 163, 209);
+}
+.this-area__important {
+  text-transform: uppercase;
+  width: 35rem;
+  text-align: justify;
 }
 
 .grid2 {
@@ -281,4 +504,23 @@ main {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: rgb(46, 12, 53);
+}
+
+.grids__flaces {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  cursor: pointer;
+  transform: translate(25%, -50%);
+}
+.grids__flaces--grimer {
+  font-size: 2rem;
+  letter-spacing: 0.4rem;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+}
+.grids__flaces--grimparag {
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4;
 }/*# sourceMappingURL=main.css.map */
